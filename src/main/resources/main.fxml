@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="626.0" prefWidth="831.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="864.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <right>
+            <AnchorPane prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label fx:id="baignoire_qte" text="0" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </right>
+         <center>
+            <AnchorPane BorderPane.alignment="CENTER">
+               <children>
+                  <Polyline fx:id="dessin_baignoire" fill="#004dff00" layoutY="2.0" points="397.0, 133.0, 396.0, 231.0, 128.0, 231.0, 127.0, 133.0" strokeWidth="2.0" />
+                  <Rectangle fx:id="dessin_robinet" arcHeight="5.0" arcWidth="5.0" fill="#aeaeae" height="64.0" layoutX="248.0" layoutY="16.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="26.0" />
+                  <Rectangle fx:id="goutte" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="27.0" layoutX="246.0" layoutY="92.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="29.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#aeaeae" height="24.0" layoutX="103.0" layoutY="16.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="147.0" />
+                  <Circle depthTest="ENABLE" fill="#ff1f1f" layoutX="344.0" layoutY="235.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Rectangle fx:id="goutte_trou" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="18.0" layoutX="335.0" layoutY="259.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="18.0" />
+                  <Pane fx:id="panel" layoutX="129.0" layoutY="230.0" prefHeight="0.0" prefWidth="267.0" style="-fx-background-color: cyan;" />
+               </children>
+            </AnchorPane>
+         </center>
+         <left>
+            <VBox prefHeight="200.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefWidth="150.0" text="Volume de la baignore :">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Spinner fx:id="spinner_baignore" editable="true" max="1000" min="0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Spinner>
+                  <Label prefWidth="150.0" text="Débit du robinet :">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Spinner fx:id="spinner_robinet" editable="true" max="1000" min="0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Spinner>
+                  <Label prefWidth="150.0" text="Nombre de trous :">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Spinner fx:id="spinner_trous" editable="true" max="1000" min="0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Spinner>
+                  <Label prefWidth="150.0" text="Débit de fuite :">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <GridPane fx:id="grid_fuite" gridLinesVisible="true" visible="false">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </children>
+            </VBox>
+         </left>
+         <bottom>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextArea fx:id="textarea" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+         </bottom>
+         <top>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="demarrer" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#lancer_simulation" text="Démarrer" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="arreter" mnemonicParsing="false" onAction="#arreter_simulation" text="Arrêter" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+            </GridPane>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

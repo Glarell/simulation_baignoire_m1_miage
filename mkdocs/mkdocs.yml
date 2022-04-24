@@ -1,0 +1,7 @@
+site_name: Simulation baignoire
+nav :
+  - Accueil : index.md
+  - Installation : install.md
+  - Utilisation : use.md
+  - Technique : tech.md
+use_directory_urls: false
