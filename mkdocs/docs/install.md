@@ -2,19 +2,18 @@
 
 `@Auteur : TONDON César`
 
-## Pré-requis
+## Commands
 
-Installer JAVA avec une version supérieure à 1.8.x.
+* `mkdocs new [dir-name]` - Create a new project.
+* `mkdocs serve` - Start the live-reloading docs server.
+* `mkdocs build` - Build the documentation site.
+* `mkdocs -h` - Print help message and exit.
 
-## Windows
+## Project layout
 
-1. Unzip le fichier "simulation-0.0.1-SNAPSHOT-src.zip", se rendre dans le repertoire bindist\ puis bin\.
-2. Exécuter le fichier bin.bash.
-
-## Linux
-
-1. Unzip le fichier "simulation-0.0.1-SNAPSHOT-src.zip", se rendre dans le repertoire bindist\ puis bin\.
-2. Donner les droits d'exécuter au script bin.sh.
-3. Exécuter le fichier bin.sh.
+    mkdocs.yml    # The configuration file.
+    docs/
+        index.md  # The documentation homepage.
+        ...       # Other markdown pages, images and other files.
 
 `Contact : cesar.tondon1@etu.univ-lorraine.fr`

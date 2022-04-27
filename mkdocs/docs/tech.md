@@ -55,14 +55,14 @@ Pour la réalisation de cette simulation, nous utilisons la **programmation** **
 
 Ici, le remplissage de la baignoire s'éxécute en même temps que ses **multiples** fuites. 
 
-C'est pourquoi, nous avons choisi de créer un service _**RemplissageService**_ afin de représenter l'unique remplissage de la baignoire.
+C'est pourquoi, nous avons choisi de créer un service _**RemplissageService**_ afin de représenter l'unique remplissage de la baignoire se déroulant toute les secondes.
 
-De plus, nous avons créé le service _**FuiteService**_ pour représenter le calcul d'une fuite. 
+De plus, nous avons créé le service _**FuiteService**_ pour représenter le calcul d'une fuite se déroulant toute les secondes. 
 
 Pour que les calculs des fuites se réalisent simultanément, nous avons listé ses services, afin de les éxécuter via un mécanisme de verrouillage : **Synchronisation**.
 
 Lors du lancement de la simulation, l'ensemble des services sont éxécutés sur une période d'une seconde d'éxécution.
 
-Lors de l'arrêt de la simulation, si des calculs sont en cours, nous les cessons et calculons les résultats.
+Lors de l'arrêt de la simulation, les calculs en cours sont stoppés pour nous permettre d'afficher les résultats.
 
 `Contact : cesar.tondon1@etu.univ-lorraine.fr`

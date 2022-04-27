@@ -1,4 +1,8 @@
-D:\Dev\tp2\src\main\java\App.java
-D:\Dev\tp2\src\main\java\Baignoire.java
-D:\Dev\tp2\src\main\java\Trou.java
-D:\Dev\tp2\src\main\java\Launcher.java
+D:\Dev\simulation_baignoire_m1_miage\src\main\java\controller\Controller.java
+D:\Dev\simulation_baignoire_m1_miage\src\main\java\model\Trou.java
+D:\Dev\simulation_baignoire_m1_miage\src\main\java\Launcher.java
+D:\Dev\simulation_baignoire_m1_miage\src\main\java\service\FuiteService.java
+D:\Dev\simulation_baignoire_m1_miage\src\main\java\model\Robinet.java
+D:\Dev\simulation_baignoire_m1_miage\src\main\java\service\RemplissageService.java
+D:\Dev\simulation_baignoire_m1_miage\src\main\java\model\Baignoire.java
+D:\Dev\simulation_baignoire_m1_miage\src\main\java\App.java

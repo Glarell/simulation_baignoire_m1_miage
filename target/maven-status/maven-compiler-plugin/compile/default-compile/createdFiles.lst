@@ -1,2 +1,10 @@
+service\RemplissageService$1.class
 Launcher.class
+controller\Controller.class
+model\Trou.class
+service\FuiteService.class
 App.class
+model\Robinet.class
+model\Baignoire.class
+service\RemplissageService.class
+service\FuiteService$1.class

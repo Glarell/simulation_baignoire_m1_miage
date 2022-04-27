@@ -34,8 +34,10 @@ _**La simulation continuera tant que l'utilisateur n'aura pas décidé de l'arr�
 Après simulation, vous trouverez les résultats de votre simulation en bas.
 Les résultats disponibles : 
 
+- durée de l'expérience
 - quantité d'eau utilisée
 - quantité d'eau dans la baignoire
+- quantité d'eau ayant fuité
 - quantité d'eau débordée de la baignoire
 
 `Contact : cesar.tondon1@etu.univ-lorraine.fr`

@@ -43,12 +43,8 @@ public class Trou {
      * @return the int
      */
     public int fuiter() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException ignored) {}
         synchronized (baignoire) {
             baignoire.removeQuantite(this.debit);
-            baignoire.addFuite(this.debit);
         }
         return this.debit;
     }

@@ -17,9 +17,12 @@ import service.FuiteService;
 import service.RemplissageService;
 
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Logger;
+
+import static java.time.temporal.ChronoUnit.MILLIS;
 
 /**
  * The type Controller.
@@ -27,7 +30,7 @@ import java.util.logging.Logger;
 public class Controller {
     private final double LAYOUT_Y = 230;
     private final Logger LOG = Logger.getLogger(Controller.class.getName());
-    private LocalTime local_time_start;
+    private LocalTime time_start;
     /**
      * The Baignoire.
      */
@@ -96,12 +99,12 @@ public class Controller {
         lancer_animation_goutte(this.goutte);
         lancer_animation_goutte(this.goutte_trou);
         for (FuiteService fuite : fuites) {
-            synchronized (fuite) {
+            synchronized (this) {
                 fuite.start();
             }
         }
-        local_time_start=LocalTime.now();
-        textarea.setText("Démarrage de la simulation à " + local_time_start + '\n');
+        time_start=LocalTime.now();
+        textarea.setText("Démarrage de la simulation à " + time_start + '\n');
     }
 
     /**
@@ -128,7 +131,6 @@ public class Controller {
      */
     public void init_listener() {
         remplissage.setOnSucceeded((WorkerStateEvent event) -> {
-            System.out.println(baignoire.getQuantite());
             this.baignoire_qte.setText(String.valueOf(baignoire.getQuantite()));
             int layout = Math.min(baignoire.getQuantite(), 100);
             panel.setLayoutY(LAYOUT_Y - layout);
@@ -147,22 +149,18 @@ public class Controller {
      * Arreter simulation.
      */
     public void arreter_simulation() {
-        if (!remplissage.isRunning()) {return;}
         LOG.info("Arrêt de la simulation !");
-        LocalTime local_time_end=LocalTime.now();
         remplissage.cancel();
         remplissage.reset();
         arreter_animation_goutte(this.goutte);
-        for (FuiteService fuite : fuites) {
-            fuite.cancel();
-            fuite.reset();
-        }
+        fuites.forEach(fuite -> {  fuite.cancel();fuite.reset();});
         arreter_animation_goutte(this.goutte_trou);
-        textarea.setText(textarea.getText() + "Arrêt de la simulation à " + local_time_end + '\n'
-                + "Durée totale de la simulation : " + local_time_end.compareTo(local_time_start) + '\n'
+        LocalTime time_end = LocalTime.now();
+        textarea.setText(textarea.getText() + "Arrêt de la simulation à " + time_end + '\n'
+                + "Durée de l'expérience : " + (MILLIS.between(time_start,time_end)/1000) + " secondes \n"
                 + "Quantité d'eau utilisée : " + this.baignoire.getCapacite_utilisee() + '\n'
                 + "Quantité d'eau dans la baignoire : " + this.baignoire.getQuantite() + '\n'
-                + "Quantité d'eau total ayant fuit de la baignoire : " + this.baignoire.getFuiteTotale() + '\n'
+                + "Quantité d'eau ayant fuité : " + this.baignoire.getFuite_total() + '\n'
                 + "Quantité d'eau débordée de la baignoire : " + this.baignoire.getDebordement());
     }
 

@@ -52,9 +52,6 @@ public class Robinet {
      * @return the int
      */
     public int remplir() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException ignored) {}
         synchronized (baignoire) {
             baignoire.addQuantite(this.debit);
         }
