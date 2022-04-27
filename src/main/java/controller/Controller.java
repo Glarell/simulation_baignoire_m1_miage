@@ -17,6 +17,7 @@ import service.FuiteService;
 import service.RemplissageService;
 
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
@@ -26,6 +27,7 @@ import java.util.logging.Logger;
 public class Controller {
     private final double LAYOUT_Y = 230;
     private final Logger LOG = Logger.getLogger(Controller.class.getName());
+    private LocalTime local_time_start;
     /**
      * The Baignoire.
      */
@@ -98,7 +100,8 @@ public class Controller {
                 fuite.start();
             }
         }
-        textarea.setText("Démarrage de la simulation à " + LocalTime.now() + '\n');
+        local_time_start=LocalTime.now();
+        textarea.setText("Démarrage de la simulation à " + local_time_start + '\n');
     }
 
     /**
@@ -146,6 +149,7 @@ public class Controller {
     public void arreter_simulation() {
         if (!remplissage.isRunning()) {return;}
         LOG.info("Arrêt de la simulation !");
+        LocalTime local_time_end=LocalTime.now();
         remplissage.cancel();
         remplissage.reset();
         arreter_animation_goutte(this.goutte);
@@ -154,9 +158,11 @@ public class Controller {
             fuite.reset();
         }
         arreter_animation_goutte(this.goutte_trou);
-        textarea.setText(textarea.getText() + "Arrêt de la simulation à " + LocalTime.now() + '\n'
+        textarea.setText(textarea.getText() + "Arrêt de la simulation à " + local_time_end + '\n'
+                + "Durée totale de la simulation : " + local_time_end.compareTo(local_time_start) + '\n'
                 + "Quantité d'eau utilisée : " + this.baignoire.getCapacite_utilisee() + '\n'
                 + "Quantité d'eau dans la baignoire : " + this.baignoire.getQuantite() + '\n'
+                + "Quantité d'eau total ayant fuit de la baignoire : " + this.baignoire.getFuiteTotale() + '\n'
                 + "Quantité d'eau débordée de la baignoire : " + this.baignoire.getDebordement());
     }
 

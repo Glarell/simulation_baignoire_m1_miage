@@ -13,6 +13,8 @@ public class Baignoire {
 
     private int debordement = 0;
 
+    private int fuiteTotale = 0;
+
     /**
      * Instantiates a new Baignoire.
      *
@@ -60,6 +62,16 @@ public class Baignoire {
         }
         this.capacite_utilisee += quantite;
         return this.quantite;
+    }
+
+    /**
+     * Add fuite int.
+     *
+     * @param debit the debit
+     * @return the int
+     */
+    public int addFuite(int debit) {
+        return this.fuiteTotale+=debit;
     }
 
     /**
@@ -132,5 +144,23 @@ public class Baignoire {
      */
     public void setDebordement(int debordement) {
         this.debordement = debordement;
+    }
+
+    /**
+     * Gets fuite totale.
+     *
+     * @return the fuite totale
+     */
+    public int getFuiteTotale() {
+        return fuiteTotale;
+    }
+
+    /**
+     * Sets fuite totale.
+     *
+     * @param fuite_totale the fuite totale
+     */
+    public void setFuiteTotale(int fuite_totale) {
+        this.fuiteTotale = fuite_totale;
     }
 }
