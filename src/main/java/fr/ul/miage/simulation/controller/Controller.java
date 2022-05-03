@@ -1,4 +1,4 @@
-package controller;
+package fr.ul.miage.simulation.controller;
 
 import javafx.animation.RotateTransition;
 import javafx.concurrent.WorkerStateEvent;
@@ -10,16 +10,14 @@ import javafx.scene.shape.Polyline;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
-import model.Baignoire;
-import model.Robinet;
-import model.Trou;
-import service.FuiteService;
-import service.RemplissageService;
+import fr.ul.miage.simulation.model.Baignoire;
+import fr.ul.miage.simulation.model.Robinet;
+import fr.ul.miage.simulation.model.Trou;
+import fr.ul.miage.simulation.service.FuiteService;
+import fr.ul.miage.simulation.service.RemplissageService;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Logger;
 
 import static java.time.temporal.ChronoUnit.MILLIS;

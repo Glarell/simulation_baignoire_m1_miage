@@ -113,15 +113,15 @@
 <h1 id="documentation-technique">Documentation technique</h1>
 <p><code>@Auteur : TONDON César</code></p>
 <h2 id="structure-du-projet">Structure du projet</h2>
-<pre><code>App.java
-Launcher.java
-controller/
+<pre><code>fr.ul.miage.simulation.App.java
+fr.ul.miage.simulation.Launcher.java
+fr.ul.miage.controller/
     Controller.java     # controleur principal de l'application
 model/                  # package contenant l'ensemble des objets
     Baignoire.java
     Robinet.java
     Trou.java
-service/                # package contenant l'ensemble des creations de services
+fr.ul.miage.service/                # package contenant l'ensemble des creations de services
     FuiteService.java
     RemplissageService.java
 </code></pre>
@@ -129,7 +129,7 @@ service/                # package contenant l'ensemble des creations de services
 <ul>
 <li><code>[../bindist/bin/] run.bat</code> - Lancement Windows OS</li>
 <li><code>[../bindist/bin/] ./run</code> - Lancement Linux OS</li>
-<li><code>[../src/main/java/] java Launcher.class</code> - Lancement depuis le fichier .class</li>
+<li><code>[../src/main/java/] java fr.ul.miage.simulation.Launcher.class</code> - Lancement depuis le fichier .class</li>
 </ul>
 <h2 id="conception-interface">Conception Interface</h2>
 <p><strong>MVC</strong> (Model-View-Controller) :<br />
@@ -154,10 +154,10 @@ Les 3 parties du modèle de conception de logiciel MVC peuvent être décrites c
 <p><strong>Class Trou</strong> : Un trou appartient à une baignore selon un débit fixe. Le trou a pour fonction vider la baignoire.</p>
 </li>
 <li>
-<p><strong>Class FuiteService</strong> : Représente l'action de fuite d'une baignoire réalisée par un trou. Toutes les secondes, le service va exécuter l'action de trou sur la baignoire.</p>
+<p><strong>Class FuiteService</strong> : Représente l'action de fuite d'une baignoire réalisée par un trou. Toutes les secondes, le fr.ul.miage.simulation.service va exécuter l'action de trou sur la baignoire.</p>
 </li>
 <li>
-<p><strong>Class RemplissageService</strong> :  Représente l'action de remplissage d'une baignoire réalisée par un robinet. Toutes les secondes, le service va exécuter l'action du robinet sur la baignoire. </p>
+<p><strong>Class RemplissageService</strong> :  Représente l'action de remplissage d'une baignoire réalisée par un robinet. Toutes les secondes, le fr.ul.miage.simulation.service va exécuter l'action du robinet sur la baignoire. </p>
 </li>
 <li>
 <p><strong>Class Controller</strong> : Controleur du modèle MVC pour permettre les intéractions entre l'utilisation et la machine.</p>
@@ -166,8 +166,8 @@ Les 3 parties du modèle de conception de logiciel MVC peuvent être décrites c
 <h2 id="choix-et-principes-de-parallelisations-des-taches">Choix et principes de parallélisations des tâches</h2>
 <p>Pour la réalisation de cette simulation, nous utilisons la <strong>programmation</strong> <strong>concurrente</strong>. Elle permet d'éxécuter plusieurs calculs <strong>simultanément</strong> au lieu d'être séquentiels.</p>
 <p>Ici, le remplissage de la baignoire s'éxécute en même temps que ses <strong>multiples</strong> fuites. </p>
-<p>C'est pourquoi, nous avons choisi de créer un service <em><strong>RemplissageService</strong></em> afin de représenter l'unique remplissage de la baignoire.</p>
-<p>De plus, nous avons créé le service <em><strong>FuiteService</strong></em> pour représenter le calcul d'une fuite. </p>
+<p>C'est pourquoi, nous avons choisi de créer un fr.ul.miage.simulation.service <em><strong>RemplissageService</strong></em> afin de représenter l'unique remplissage de la baignoire.</p>
+<p>De plus, nous avons créé le fr.ul.miage.simulation.service <em><strong>FuiteService</strong></em> pour représenter le calcul d'une fuite. </p>
 <p>Pour que les calculs des fuites se réalisent simultanément, nous avons listé ses services, afin de les éxécuter via un mécanisme de verrouillage : <strong>Synchronisation</strong>.</p>
 <p>Lors du lancement de la simulation, l'ensemble des services sont éxécutés sur une période d'une seconde d'éxécution.</p>
 <p>Lors de l'arrêt de la simulation, si des calculs sont en cours, nous les cessons et calculons les résultats.</p>

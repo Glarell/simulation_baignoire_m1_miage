@@ -1,20 +1,20 @@
-package model;
+package fr.ul.miage.simulation.model;
 
 /**
- * The type Trou.
+ * The type Robinet.
  */
-public class Trou {
+public class Robinet {
 
     private final Baignoire baignoire;
     private int debit;
 
     /**
-     * Instantiates a new Trou.
+     * Instantiates a new Robinet.
      *
      * @param baignoire the baignoire
      * @param debit     the debit
      */
-    public Trou(Baignoire baignoire, int debit) {
+    public Robinet(Baignoire baignoire, int debit) {
         this.debit = debit;
         this.baignoire = baignoire;
     }
@@ -38,13 +38,22 @@ public class Trou {
     }
 
     /**
-     * Fuiter int.
+     * Gets baignore.
+     *
+     * @return the baignore
+     */
+    public Baignoire getBaignore() {
+        return baignoire;
+    }
+
+    /**
+     * Remplir int.
      *
      * @return the int
      */
-    public int fuiter() {
+    public int remplir() {
         synchronized (baignoire) {
-            baignoire.removeQuantite(this.debit);
+            baignoire.addQuantite(this.debit);
         }
         return this.debit;
     }

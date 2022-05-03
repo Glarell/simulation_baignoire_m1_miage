@@ -1,8 +1,8 @@
-D:\Dev\simulation_baignoire_m1_miage\src\main\java\controller\Controller.java
-D:\Dev\simulation_baignoire_m1_miage\src\main\java\model\Trou.java
-D:\Dev\simulation_baignoire_m1_miage\src\main\java\Launcher.java
-D:\Dev\simulation_baignoire_m1_miage\src\main\java\service\FuiteService.java
-D:\Dev\simulation_baignoire_m1_miage\src\main\java\model\Robinet.java
-D:\Dev\simulation_baignoire_m1_miage\src\main\java\service\RemplissageService.java
-D:\Dev\simulation_baignoire_m1_miage\src\main\java\model\Baignoire.java
-D:\Dev\simulation_baignoire_m1_miage\src\main\java\App.java
+D:\MASTER_MIAGE\Prog_avancee\simulation_baignoire_m1_miage\src\main\java\fr\ul\miage\simulation\service\FuiteService.java
+D:\MASTER_MIAGE\Prog_avancee\simulation_baignoire_m1_miage\src\main\java\fr\ul\miage\simulation\App.java
+D:\MASTER_MIAGE\Prog_avancee\simulation_baignoire_m1_miage\src\main\java\fr\ul\miage\simulation\model\Baignoire.java
+D:\MASTER_MIAGE\Prog_avancee\simulation_baignoire_m1_miage\src\main\java\fr\ul\miage\simulation\model\Robinet.java
+D:\MASTER_MIAGE\Prog_avancee\simulation_baignoire_m1_miage\src\main\java\fr\ul\miage\simulation\service\RemplissageService.java
+D:\MASTER_MIAGE\Prog_avancee\simulation_baignoire_m1_miage\src\main\java\fr\ul\miage\simulation\controller\Controller.java
+D:\MASTER_MIAGE\Prog_avancee\simulation_baignoire_m1_miage\src\main\java\fr\ul\miage\simulation\Launcher.java
+D:\MASTER_MIAGE\Prog_avancee\simulation_baignoire_m1_miage\src\main\java\fr\ul\miage\simulation\model\Trou.java

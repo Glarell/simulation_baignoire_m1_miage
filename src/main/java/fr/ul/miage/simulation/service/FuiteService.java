@@ -1,14 +1,14 @@
-package service;
+package fr.ul.miage.simulation.service;
 
 import javafx.concurrent.ScheduledService;
 import javafx.concurrent.Task;
 import javafx.util.Duration;
-import model.Trou;
+import fr.ul.miage.simulation.model.Trou;
 
 import java.util.logging.Logger;
 
 /**
- * The type Fuite service.
+ * The type Fuite fr.ul.miage.simulation.service.
  */
 public class FuiteService extends ScheduledService<Integer> {
 
@@ -17,7 +17,7 @@ public class FuiteService extends ScheduledService<Integer> {
     private final Trou trou;
 
     /**
-     * Instantiates a new Fuite service.
+     * Instantiates a new Fuite fr.ul.miage.simulation.service.
      *
      * @param trou the trou
      */

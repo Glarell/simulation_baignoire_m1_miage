@@ -1,5 +1,7 @@
+package fr.ul.miage.simulation;
+
 /**
- * The type Launcher.
+ * The type fr.ul.miage.simulation.Launcher.
  */
 public class Launcher {
 

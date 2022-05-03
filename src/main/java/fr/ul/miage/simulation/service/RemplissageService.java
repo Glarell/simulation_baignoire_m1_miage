@@ -1,14 +1,14 @@
-package service;
+package fr.ul.miage.simulation.service;
 
 import javafx.concurrent.ScheduledService;
 import javafx.concurrent.Task;
 import javafx.util.Duration;
-import model.Robinet;
+import fr.ul.miage.simulation.model.Robinet;
 
 import java.util.logging.Logger;
 
 /**
- * The type Remplissage service.
+ * The type Remplissage fr.ul.miage.simulation.service.
  */
 public class RemplissageService extends ScheduledService<Integer> {
 
@@ -17,7 +17,7 @@ public class RemplissageService extends ScheduledService<Integer> {
     private final Logger LOG = Logger.getLogger(RemplissageService.class.getName());
 
     /**
-     * Instantiates a new Remplissage service.
+     * Instantiates a new Remplissage fr.ul.miage.simulation.service.
      *
      * @param robinet the robinet
      */

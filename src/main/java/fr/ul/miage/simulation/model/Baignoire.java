@@ -1,4 +1,4 @@
-package model;
+package fr.ul.miage.simulation.model;
 
 /**
  * The type Baignoire.

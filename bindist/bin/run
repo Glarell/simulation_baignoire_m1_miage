@@ -97,7 +97,7 @@ then
   REPO="$BASEDIR"/repo
 fi
 
-CLASSPATH="$BASEDIR"/etc:"$REPO"/javafx-fxml-17.jar:"$REPO"/javafx-fxml-17-win.jar:"$REPO"/javafx-controls-17.jar:"$REPO"/javafx-controls-17-win.jar:"$REPO"/javafx-graphics-17.jar:"$REPO"/javafx-graphics-17-win.jar:"$REPO"/javafx-base-17.jar:"$REPO"/javafx-base-17-win.jar:"$REPO"/Simulation-1.0-SNAPSHOT.jar
+CLASSPATH="$BASEDIR"/etc:"$REPO"/javafx-fxml-17.jar:"$REPO"/javafx-fxml-17-win.jar:"$REPO"/javafx-controls-17.jar:"$REPO"/javafx-controls-17-win.jar:"$REPO"/javafx-graphics-17.jar:"$REPO"/javafx-graphics-17-win.jar:"$REPO"/javafx-base-17.jar:"$REPO"/javafx-base-17-win.jar:"$REPO"/simulation-1.0-SNAPSHOT.jar
 
 ENDORSED_DIR=
 if [ -n "$ENDORSED_DIR" ] ; then
@@ -124,5 +124,5 @@ exec "$JAVACMD" $JAVA_OPTS -module-path $JAVAFX_HOME/lib -add-modules javafx.con
   -Dapp.repo="$REPO" \
   -Dapp.home="$BASEDIR" \
   -Dbasedir="$BASEDIR" \
-  org.example.Simulation.Launcher \
+  fr.ul.miage.simulation.Launcher \
   "$@"

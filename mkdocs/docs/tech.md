@@ -4,15 +4,15 @@
 
 ## Structure du projet
 
-    App.java
-    Launcher.java
-    controller/
+    fr.ul.miage.simulation.App.java
+    fr.ul.miage.simulation.Launcher.java
+    fr.ul.miage.simulation.controller/
         Controller.java     # controleur principal de l'application
     model/                  # package contenant l'ensemble des objets
         Baignoire.java
         Robinet.java
         Trou.java
-    service/                # package contenant l'ensemble des creations de services
+    fr.ul.miage.simulation.service/                # package contenant l'ensemble des creations de services
         FuiteService.java
         RemplissageService.java
 
@@ -20,7 +20,7 @@
 
 * `[../bindist/bin/] run.bat ` - Lancement Windows OS
 * `[../bindist/bin/] ./run ` - Lancement Linux OS
-* `[../src/main/java/] java Launcher.class` - Lancement depuis le fichier .class
+* `[../src/main/java/] java fr.ul.miage.simulation.Launcher.class` - Lancement depuis le fichier .class
 
 ## Conception Interface
 
@@ -44,8 +44,8 @@ L'interface est divisée en trois parties :
 - **Class Robinet** : Un robinet appartient à une baignoire selon un débit fixe. Le robinet a pour fonction de remplir la baignoire.
 - **Class Trou** : Un trou appartient à une baignore selon un débit fixe. Le trou a pour fonction vider la baignoire.
 
-- **Class FuiteService** : Représente l'action de fuite d'une baignoire réalisée par un trou. Toutes les secondes, le service va exécuter l'action de trou sur la baignoire.
-- **Class RemplissageService** :  Représente l'action de remplissage d'une baignoire réalisée par un robinet. Toutes les secondes, le service va exécuter l'action du robinet sur la baignoire. 
+- **Class FuiteService** : Représente l'action de fuite d'une baignoire réalisée par un trou. Toutes les secondes, le fr.ul.miage.simulation.service va exécuter l'action de trou sur la baignoire.
+- **Class RemplissageService** :  Représente l'action de remplissage d'une baignoire réalisée par un robinet. Toutes les secondes, le fr.ul.miage.simulation.service va exécuter l'action du robinet sur la baignoire. 
 
 - **Class Controller** : Controleur du modèle MVC pour permettre les intéractions entre l'utilisation et la machine.
 
@@ -55,9 +55,9 @@ Pour la réalisation de cette simulation, nous utilisons la **programmation** **
 
 Ici, le remplissage de la baignoire s'éxécute en même temps que ses **multiples** fuites. 
 
-C'est pourquoi, nous avons choisi de créer un service _**RemplissageService**_ afin de représenter l'unique remplissage de la baignoire se déroulant toute les secondes.
+C'est pourquoi, nous avons choisi de créer un fr.ul.miage.simulation.service _**RemplissageService**_ afin de représenter l'unique remplissage de la baignoire se déroulant toute les secondes.
 
-De plus, nous avons créé le service _**FuiteService**_ pour représenter le calcul d'une fuite se déroulant toute les secondes. 
+De plus, nous avons créé le fr.ul.miage.simulation.service _**FuiteService**_ pour représenter le calcul d'une fuite se déroulant toute les secondes. 
 
 Pour que les calculs des fuites se réalisent simultanément, nous avons listé ses services, afin de les éxécuter via un mécanisme de verrouillage : **Synchronisation**.
 

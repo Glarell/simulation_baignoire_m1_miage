@@ -1,3 +1,5 @@
+package fr.ul.miage.simulation;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -5,7 +7,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
- * The type App.
+ * The type fr.ul.miage.simulation.App.
  */
 public class App extends Application {
 
